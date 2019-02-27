@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/mangodyl/friend-finder/issues"
   },
-  "homepage": "https://github.com/mangodyl/friend-finder#readme"
+  "homepage": "https://github.com/mangodyl/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

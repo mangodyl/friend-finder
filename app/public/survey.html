@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center">Survey!</h1>
+      <hr>
+      <h2 class="text-center">Answer all questions truthfully, or risk befriending an enemy...</h2>
+      <br>
+
+    </div>
+
+    <div id="questions">
+        <form>
+            <div class="form-group">
+                <label>Name:</label>
+                <input id="name-input" class="form-control" type="text" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label>Photo URL:</label>
+                <input id="photo-input" class="form-control" type="text" placeholder="https://picture-of-you-example.com">
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center">
+        <a href=""><button class="btn btn-lg btn-primary btn-block">Get Results!</button></a>
+      </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/mangodyl/friend-finder">Github Repo</a>
+      </div>
+    </footer>
+
+  </div>
+
+
+</body>
+</html>
