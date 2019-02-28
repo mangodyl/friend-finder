@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title>Friend Finder</title>
 
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -22,21 +23,169 @@
     </div>
 
     <div id="questions">
-        <form>
+        <form class="was-validated" novalidate>
             <div class="form-group">
                 <label>Name:</label>
-                <input id="name-input" class="form-control" type="text" placeholder="John Doe">
+                <input id="name-input" class="form-control" type="text" placeholder="John Doe" required>
+                <div class="invalid-feedback">
+                    Please provide a name.
+                </div>
             </div>
             <div class="form-group">
                 <label>Photo URL:</label>
-                <input id="photo-input" class="form-control" type="text" placeholder="https://picture-of-you-example.com">
+                <input id="photo-input" class="form-control" type="text" placeholder="https://www.picture-of-you-example.com" required>
+                <div class="invalid-feedback">
+                    Please provide a photo.
+                </div>
+            </div>
+            <div class="form-group">
+                    <label>You are a major pet person.</label> 
+                <select class="custom-select" id="q1" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>You like experimenting in regards to food.</label> 
+                <select class="custom-select" id="q2" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>You can watch the same movies again and again.</label> 
+                <select class="custom-select" id="q3" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>You enjoy watching sports.</label> 
+                <select class="custom-select" id="q4" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>Super speed is better than super strength.</label> 
+                <select class="custom-select" id="q5" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>You enjoy travelling.</label> 
+                <select class="custom-select" id="q6" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>Horror movies & haunted houses are super fun.</label> 
+                <select class="custom-select" id="q7" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>You think the world would be better if everyone was a lot more like you.</label> 
+                <select class="custom-select" id="q8" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>If 1 is West Coast, and 5 is East Coast, where do you want to live?</label> 
+                <select class="custom-select" id="q9" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <div class="form-group">
+                    <label>A hotdog is a sandwich.</label> 
+                <select class="custom-select" id="q10" required>
+                    <option value="">Please select a number...</option>
+                    <option value="1">1 - strongly disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - strongly agree</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
             </div>
         </form>
     </div>
 
     <div class="text-center">
-        <a href=""><button class="btn btn-lg btn-primary btn-block">Get Results!</button></a>
-      </div>
+        <a href=""><button id="submit" class="btn btn-lg btn-primary btn-block" data-toggle="modal"
+                data-target="#modal">Get Results!</button></a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Meet Your New Friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="displayFriend" class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
       <div class="container">
@@ -46,6 +195,36 @@
 
   </div>
 
+  <script type="text/javascript">
+
+      $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        const newFriend = {
+            name: $("#name-input").val().trim(),
+            photo: $("#photo-input").val().trim(),
+            scores: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val(),
+            ]
+        };
+
+        $.post("/api/friends", newFriend, data => {
+            console.log("Congratulations, you have offered yourself to eternal friendship. The bond cannot be broken.");
+        });
+
+
+      });
+
+  </script>
 
 </body>
 </html>
