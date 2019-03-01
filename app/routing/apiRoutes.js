@@ -7,12 +7,14 @@ module.exports = function(app) {
     });
   
     app.post("/api/friends", function(req, res) {
+        // The worst score is 40, hence the 41 inital value
+        let bestDiff = 41;
+        let bestIndex = 0;
 
         // Loop through array of friends
         for (let i = 0; i < friendsData.length; i++) {
             let diffArray = [];
-            let bestDiff = 0;
-            let bestIndex = 0;
+            
             // Loop through scores
             for (let j = 0; j < 10; j++) {
                 let diff = Math.abs((parseInt(req.body.scores[j])) - (friendsData[i].scores[j]));
@@ -21,7 +23,7 @@ module.exports = function(app) {
                 if (j === 9) {
                     let totalDiff = diffArray.reduce((acc, val) => acc + val);
                     // Compare total to current closest match and replace if closer
-                    if (totalDiff > bestDiff) {
+                    if (totalDiff < bestDiff) {
                         bestDiff = totalDiff;
                         bestIndex = i;
                     };
