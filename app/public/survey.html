@@ -23,7 +23,7 @@
     </div>
 
     <div id="questions">
-        <form class="was-validated" novalidate>
+        <form class="needs-validation" novalidate>
             <div class="form-group">
                 <label>Name:</label>
                 <input id="name-input" class="form-control" type="text" placeholder="John Doe" required>
@@ -227,8 +227,6 @@
             $("#friendName").text(data.name);
             $("#friendPhoto").attr("src", data.photo);
         });
-
-
       });
 
   </script>

@@ -30,7 +30,22 @@ var friendsArray = [
             4,
             5
         ]
-    },
+    }, {
+        "name": "Stranger Things Monster",
+        "photo": "https://uproxx.files.wordpress.com/2017/10/stranger-things-2-what-is-the-monster.jpg?quality=100&w=650",
+        "scores": [
+            5,
+            5,
+            3,
+            2,
+            2,
+            4,
+            5,
+            5,
+            3,
+            3
+        ]
+    }
 ];
 
 module.exports = friendsArray;
