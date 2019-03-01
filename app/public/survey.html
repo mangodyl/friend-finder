@@ -138,11 +138,11 @@
                     <label>If 1 is West Coast, and 5 is East Coast, where do you want to live?</label> 
                 <select class="custom-select" id="q9" required>
                     <option value="">Please select a number...</option>
-                    <option value="1">1 - strongly disagree</option>
+                    <option value="1">1 - West Coast</option>
                     <option value="2">2</option>
-                    <option value="3">3 - neither agree nor disagree</option>
+                    <option value="3">3 - Midwest</option>
                     <option value="4">4</option>
-                    <option value="5">5 - strongly agree</option>
+                    <option value="5">5 - East Coast</option>
                 </select>
                 <div class="invalid-feedback">Example invalid custom select feedback</div>
             </div>
@@ -178,7 +178,9 @@
                     </button>
                 </div>
                 <div id="displayFriend" class="modal-body">
-                    
+                    <h3>Name: <span id="friendName"></span></h3>
+                    <img id="friendPhoto" alt="friend match picture" width="300" height="200">
+                    <p>Enjoy your new best friend!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -204,21 +206,26 @@
             name: $("#name-input").val().trim(),
             photo: $("#photo-input").val().trim(),
             scores: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val(),
+                parseInt($("#q1").val()),
+                parseInt($("#q2").val()),
+                parseInt($("#q3").val()),
+                parseInt($("#q4").val()),
+                parseInt($("#q5").val()),
+                parseInt($("#q6").val()),
+                parseInt($("#q7").val()),
+                parseInt($("#q8").val()),
+                parseInt($("#q9").val()),
+                parseInt($("#q10").val()),
             ]
         };
 
+        console.log(newFriend);
+
         $.post("/api/friends", newFriend, data => {
             console.log("Congratulations, you have offered yourself to eternal friendship. The bond cannot be broken.");
+            console.log(data);
+            $("#friendName").text(data.name);
+            $("#friendPhoto").attr("src", data.photo);
         });
 
 

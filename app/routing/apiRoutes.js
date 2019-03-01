@@ -7,36 +7,36 @@ module.exports = function(app) {
     });
   
     app.post("/api/friends", function(req, res) {
-        friendsData.push(req.body);
 
-        console.log(`${req.body} <- body
-        ${req.body.scores} <- scores
-        ${friendsData} <- friends data
-        ${friendsData[0].scores[0]}`)
-
-
-
+        // Loop through array of friends
         for (let i = 0; i < friendsData.length; i++) {
             let diffArray = [];
             let bestDiff = 0;
             let bestIndex = 0;
+            // Loop through scores
             for (let j = 0; j < 10; j++) {
-                let diff = (req.body.scores[j]) - (friendsData[i].scores[j])
+                let diff = Math.abs((parseInt(req.body.scores[j])) - (friendsData[i].scores[j]));
                 diffArray.push(diff);
+                // When last item is pushed, find total
                 if (j === 9) {
-                    const totalDiff = diffArray.reduce((acc, val) => {
-                        acc + val;
-                    })
+                    console.log(diffArray);
+                    let totalDiff = diffArray.reduce((acc, val) => acc + val);
+                    console.log(totalDiff);
+                    // Compare total to current closest match and replace if closer
                     if (totalDiff > bestDiff) {
                         bestDiff = totalDiff;
                         bestIndex = i;
                     };
                 };
             };
+            // Once last friend is checked, send best match to survey for modal population
             if(i === (friendsData.length - 1)) {
                 console.log(friendsData[bestIndex].name);
-            }
+                res.json(friendsData[bestIndex]);
+            };
         };
 
+        // Now that the loop is done we can send the new friend in
+        friendsData.push(req.body);
     });
   };
