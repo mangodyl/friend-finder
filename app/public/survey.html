@@ -23,7 +23,7 @@
     </div>
 
     <div id="questions">
-        <form class="needs-validation" novalidate>
+        <form>
             <div class="form-group">
                 <label>Name:</label>
                 <input id="name-input" class="form-control" type="text" placeholder="John Doe" required>
@@ -41,7 +41,6 @@
             <div class="form-group">
                     <label>You are a major pet person.</label> 
                 <select class="custom-select" id="q1" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -53,7 +52,6 @@
             <div class="form-group">
                     <label>You like experimenting in regards to food.</label> 
                 <select class="custom-select" id="q2" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -65,7 +63,6 @@
             <div class="form-group">
                     <label>You can watch the same movies again and again.</label> 
                 <select class="custom-select" id="q3" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -77,7 +74,6 @@
             <div class="form-group">
                     <label>You enjoy watching sports.</label> 
                 <select class="custom-select" id="q4" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -89,7 +85,6 @@
             <div class="form-group">
                     <label>Super speed is better than super strength.</label> 
                 <select class="custom-select" id="q5" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -101,7 +96,6 @@
             <div class="form-group">
                     <label>You enjoy travelling.</label> 
                 <select class="custom-select" id="q6" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -113,7 +107,6 @@
             <div class="form-group">
                     <label>Horror movies & haunted houses are super fun.</label> 
                 <select class="custom-select" id="q7" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -125,7 +118,6 @@
             <div class="form-group">
                     <label>You think the world would be better if everyone was a lot more like you.</label> 
                 <select class="custom-select" id="q8" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -137,7 +129,6 @@
             <div class="form-group">
                     <label>If 1 is West Coast, and 5 is East Coast, where do you want to live?</label> 
                 <select class="custom-select" id="q9" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - West Coast</option>
                     <option value="2">2</option>
                     <option value="3">3 - Midwest</option>
@@ -149,7 +140,6 @@
             <div class="form-group">
                     <label>A hotdog is a sandwich.</label> 
                 <select class="custom-select" id="q10" required>
-                    <option value="">Please select a number...</option>
                     <option value="1">1 - strongly disagree</option>
                     <option value="2">2</option>
                     <option value="3">3 - neither agree nor disagree</option>
@@ -158,13 +148,14 @@
                 </select>
                 <div class="invalid-feedback">Example invalid custom select feedback</div>
             </div>
+
+            <div class="text-center">
+                <a href=""><button type="submit" id="submit" class="btn btn-lg btn-primary btn-block" >Get Results!</button></a>
+            </div>
         </form>
     </div>
 
-    <div class="text-center">
-        <a href=""><button id="submit" class="btn btn-lg btn-primary btn-block" data-toggle="modal"
-                data-target="#modal">Get Results!</button></a>
-    </div>
+   
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -180,7 +171,7 @@
                 <div id="displayFriend" class="modal-body">
                     <h3>Name: <span id="friendName"></span></h3>
                     <img id="friendPhoto" alt="friend match picture" width="300" height="200">
-                    <p>Enjoy your new best friend!</p>
+                    <p>Congratulations, you have offered yourself to eternal friendship. The bond cannot be broken.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -199,35 +190,52 @@
 
   <script type="text/javascript">
 
-      $("#submit").on("click", function(event) {
-        event.preventDefault();
+    $(function() {
 
-        const newFriend = {
-            name: $("#name-input").val().trim(),
-            photo: $("#photo-input").val().trim(),
-            scores: [
-                parseInt($("#q1").val()),
-                parseInt($("#q2").val()),
-                parseInt($("#q3").val()),
-                parseInt($("#q4").val()),
-                parseInt($("#q5").val()),
-                parseInt($("#q6").val()),
-                parseInt($("#q7").val()),
-                parseInt($("#q8").val()),
-                parseInt($("#q9").val()),
-                parseInt($("#q10").val()),
-            ]
-        };
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
 
-        console.log(newFriend);
+            let nameInput = $("#name-input").val().trim();
+            let photoInput = $("#photo-input").val().trim();
 
-        $.post("/api/friends", newFriend, data => {
-            console.log("Congratulations, you have offered yourself to eternal friendship. The bond cannot be broken.");
-            console.log(data);
-            $("#friendName").text(data.name);
-            $("#friendPhoto").attr("src", data.photo);
+            if (nameInput !== "" && photoInput.match(/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)) {
+                const newFriend = {
+                    name: nameInput,
+                    photo: photoInput,
+                    scores: [
+                        parseInt($("#q1").val()),
+                        parseInt($("#q2").val()),
+                        parseInt($("#q3").val()),
+                        parseInt($("#q4").val()),
+                        parseInt($("#q5").val()),
+                        parseInt($("#q6").val()),
+                        parseInt($("#q7").val()),
+                        parseInt($("#q8").val()),
+                        parseInt($("#q9").val()),
+                        parseInt($("#q10").val()),
+                    ]
+                };
+
+                console.log(newFriend);
+
+                $.post("/api/friends", newFriend, data => {
+                    console.log("By submitting this form, you are agreeing to a legally-binding contract whereby you must acknowledge your new best friend is such for the remainder of your life.");
+                    $("#friendName").text(data.name);
+                    $("#friendPhoto").attr("src", data.photo);
+                });
+
+                $('#modal').modal('show')
+            }
+            else {
+                alert("Please fill in all the fields and make your selections");
+            }
         });
-      });
+
+        $('#modal').on('hide.bs.modal', function (e) {
+            window.scrollTo(0, 0);
+            setTimeout(location.reload(), 1000);
+        });
+    });
 
   </script>
 
