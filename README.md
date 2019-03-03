@@ -1,11 +1,11 @@
-# 'friend-finder'
+# 'friend-finder' :busts_in_silhouette: 
 Complete a survey and find like-minded people to hang out with*!
 
 *_By using friend-finder you agree that I take no responsibility for fictional matchings and/or failed friendships as a result of this using app_
 
 ***
 
-## How to use 'friend-finder': :bulb:
+## How to use 'friend-finder': :couple: :two_men_holding_hands: :two_women_holding_hands:
 
 Look, there's not much to it (I'm sure you've completed forms before), but here's a breakdown if you need it:
 
@@ -21,4 +21,4 @@ Look, there's not much to it (I'm sure you've completed forms before), but here'
 
 **_It is not against the (blood-pact-equivalent) contract to redo the quiz, match with yourself and become your own best friend, however you must then adhere to the previous rule and acknowledge that you are your own best friend._
 
-### Enjoy your new friends!
+### Enjoy your new friends! :neckbeard:
