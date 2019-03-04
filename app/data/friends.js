@@ -45,6 +45,36 @@ var friendsArray = [
             3,
             3
         ]
+    }, {
+        "name": "Sellout Hulk",
+        "photo": "http://clipart-library.com/images/rcLo5zKpi.jpg",
+        "scores": [
+            3,
+            1,
+            4,
+            5,
+            1,
+            1,
+            1,
+            1,
+            5,
+            1
+        ]
+    }, {
+        "name": "Frankie 'Bolt-Neck' Monster",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxMRJ8PChJ1rlAIK0oj7UmIdJtasAtguvmMht1POBtlz4r30uSDw",
+        "scores": [
+            5,
+            3,
+            1,
+            3,
+            4,
+            5,
+            5,
+            1,
+            1,
+            3
+        ]
     }
 ];
 
