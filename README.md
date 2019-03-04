@@ -1,6 +1,8 @@
 # 'friend-finder' :busts_in_silhouette: 
 Complete a survey and find like-minded people to hang out with*!
 
+[https://monster-friend-finder.herokuapp.com/](https://monster-friend-finder.herokuapp.com/)
+
 *_By using friend-finder you agree that I take no responsibility for fictional matchings and/or failed friendships as a result of this using app_
 
 ***
@@ -9,7 +11,7 @@ Complete a survey and find like-minded people to hang out with*!
 
 Look, there's not much to it (I'm sure you've completed forms before), but here's a breakdown if you need it:
 
-1. To open 'friend-finder' follow the link at the top or click [here](heroku link).
+1. To open 'friend-finder' follow the link at the top or click [here](https://monster-friend-finder.herokuapp.com/).
 
 1. Click the 'Take Survey' button to take you to the form.
 
